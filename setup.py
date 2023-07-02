@@ -4,5 +4,5 @@ setup(
     name="PredefinedS3",
     version= __version__,
     packages=find_packages(),
-   # py_modules=['common_buckets_config'],
+    py_modules=['PredefinedS3'],
 )
