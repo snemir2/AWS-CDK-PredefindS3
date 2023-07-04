@@ -14,15 +14,10 @@ from aws_cdk import (
     RemovalPolicy,
     aws_ssm as ssm
 )
-from botocore.client import ClientError
-from  boto3 import (
-    client,
-    resource,
-    s3 as boto3_s3,
-)
+
 #__version__=time.strftime("%Y.%m")
 __version__="2023.07"
-class common_buckets_config(Construct):
+class  predefined_bucket(Construct):
     #unset IF not using LZA https://aws.amazon.com/solutions/implementations/landing-zone-accelerator-on-aws/
     LZA=True
     def __init__(self, scope: Construct, construct_id: str,
