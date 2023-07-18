@@ -1,0 +1,7 @@
+README.md
+setup.py
+PredefinedS3/common_buckets_config.py
+PredefinedS3.egg-info/PKG-INFO
+PredefinedS3.egg-info/SOURCES.txt
+PredefinedS3.egg-info/dependency_links.txt
+PredefinedS3.egg-info/top_level.txt
