@@ -2,7 +2,7 @@
 Python Construct class with commonly used configurations for s3 buckets. 
 # Using the Module 
 
-1. Add the following in your cdk's  requirements.txt
+1. Add the following to your cdk's  requirements.txt
 ```
 PredefinedS3 @ git+https://github.com/snemir2/AWS-CDK-PredefindS3
 ```

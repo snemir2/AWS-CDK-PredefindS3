@@ -65,6 +65,8 @@ class  predefined_bucket(Construct):
         server_access_logs_bucket=access_logs_bucket,
         server_access_logs_prefix=bucket_unique_name + "/",
         )
+        
+    
     
     
         #with hope of better updatability in the future, splitting off lifecycle rules
