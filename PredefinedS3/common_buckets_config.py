@@ -140,6 +140,9 @@ class  predefined_bucket(Construct):
         versioned=False,
         removal_policy=RemovalPolicy.RETAIN,
         bucket_name=bucket_unique_name,
+        server_access_logs_bucket=access_logs_bucket,
+        server_access_logs_prefix=bucket_unique_name + "/",
+        )
         lifecycle_rules=[
             s3.LifecycleRule(
                 transitions=[transition],
