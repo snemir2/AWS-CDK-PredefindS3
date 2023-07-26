@@ -58,15 +58,15 @@ class  predefined_bucket(Construct):
             )],
         
         my_bucket=s3.Bucket( self, bucket_name,
-        block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-        encryption=s3.BucketEncryption.S3_MANAGED,
-        enforce_ssl=True,
-        versioned=True,
-        removal_policy=RemovalPolicy.RETAIN,
-        bucket_name=bucket_unique_name,
-        server_access_logs_bucket=access_logs_bucket,
-        server_access_logs_prefix=bucket_unique_name + "/",
-        )
+            block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
+            encryption=s3.BucketEncryption.S3_MANAGED,
+            enforce_ssl=True,
+            versioned=True,
+            removal_policy=RemovalPolicy.RETAIN,
+            bucket_name=bucket_unique_name,
+            server_access_logs_bucket=access_logs_bucket,
+            server_access_logs_prefix=bucket_unique_name + "/",
+            )
     
     
         #with hope of better updatability in the future, splitting off lifecycle rules
@@ -141,8 +141,8 @@ class  predefined_bucket(Construct):
         removal_policy=RemovalPolicy.RETAIN,
         bucket_name=bucket_unique_name,
         server_access_logs_bucket=access_logs_bucket,
-        server_access_logs_prefix=bucket_unique_name + "/",
-        )
+        server_access_logs_prefix=bucket_unique_name + "/")
+                    
         lifecycle_rules=[
             s3.LifecycleRule(
                 transitions=[transition],
