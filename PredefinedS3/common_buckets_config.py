@@ -39,7 +39,9 @@ class  predefined_bucket(Construct):
         if bucket_type == "data_bucket":
             self.data_bucket(bucket_name)
         if bucket_type == "s3_access_log_bucket":
-            self.ls3_access_log_bucket(bucket_name)
+            self.s3_access_log_bucket(bucket_name)
+        if bucket_type == "log_bucket":
+            self.log_bucket(bucket_name)
        
                 
     def data_bucket( self,  bucket_name):
@@ -134,7 +136,6 @@ class  predefined_bucket(Construct):
         my_bucket=s3.Bucket( self, "LogBucket" + bucket_name,
         block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
         encryption=s3.BucketEncryption.S3_MANAGED,
-        access_control=s3.BucketAccessControl.LOG_DELIVERY_WRITE,
         enforce_ssl=True,
         versioned=False,
         removal_policy=RemovalPolicy.RETAIN,
