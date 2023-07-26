@@ -133,24 +133,24 @@ class  predefined_bucket(Construct):
             storage_class=s3.StorageClass.GLACIER,
             transition_after=aws_cdk.Duration.days(30),
             )
+        
         my_bucket=s3.Bucket( self, "LogBucket" + bucket_name,
-        block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-        encryption=s3.BucketEncryption.S3_MANAGED,
-        enforce_ssl=True,
-        versioned=False,
-        removal_policy=RemovalPolicy.RETAIN,
-        bucket_name=bucket_unique_name,
-        server_access_logs_bucket=access_logs_bucket,
-        server_access_logs_prefix=bucket_unique_name + "/",
-                    
-        lifecycle_rules=[
-            s3.LifecycleRule(
-                transitions=[transition],
-                expiration=aws_cdk.Duration.days(365 * 3),
-                enabled=True,
-                id=f"expiration"
-            )
-        ],
+            block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
+            encryption=s3.BucketEncryption.S3_MANAGED,
+            enforce_ssl=True,
+            versioned=False,
+            removal_policy=RemovalPolicy.RETAIN,
+            bucket_name=bucket_unique_name,
+            server_access_logs_bucket=access_logs_bucket,
+            server_access_logs_prefix=bucket_unique_name + "/",
+            lifecycle_rules=[
+                s3.LifecycleRule(
+                    transitions=[transition],
+                    expiration=aws_cdk.Duration.days(365 * 3),
+                    enabled=True,
+                    id=f"expiration"
+                )
+            ]
         )
     
         return my_bucket
