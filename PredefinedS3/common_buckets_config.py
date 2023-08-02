@@ -20,6 +20,7 @@ __version__="2023.07"
 class  predefined_bucket(Construct):
     #unset IF not using LZA https://aws.amazon.com/solutions/implementations/landing-zone-accelerator-on-aws/
     LZA=True
+    
     def __init__(self, scope: Construct, construct_id: str,
                  bucket_name: str, bucket_type: str ,  **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -44,6 +45,9 @@ class  predefined_bucket(Construct):
             my_bucket=self.log_bucket(bucket_name)
 
         bucket_arn=my_bucket.bucket_arn
+
+    def get_arn(self):
+        return self.bucket_arn
 
     def add_to_resource_policy(self, PolicyStatment):
         self.my_bucket.add_to_resource_policy(PolicyStatment)
