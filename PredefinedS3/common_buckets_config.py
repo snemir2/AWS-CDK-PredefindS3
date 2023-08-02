@@ -37,12 +37,15 @@ class  predefined_bucket(Construct):
         # call the right function based on the bucket type
         #using name withouth region/account_id as code downstream breaks if runtime variables are used. 
         if bucket_type == "data_bucket":
-            self.data_bucket(bucket_name)
+            my_bucket=self.data_bucket(bucket_name)
         if bucket_type == "s3_access_log_bucket":
-            self.s3_access_log_bucket(bucket_name)
+            my_bucket=self.s3_access_log_bucket(bucket_name)
         if bucket_type == "log_bucket":
-            self.log_bucket(bucket_name)
-       
+            my_bucket=self.log_bucket(bucket_name)
+
+    def add_to_resource_policy(self, PolicyStatment):
+        self.my_bucket.add_to_resource_policy(PolicyStatment)
+        
                 
     def data_bucket( self,  bucket_name):
         # Import s3 access log bucket 
