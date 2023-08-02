@@ -52,7 +52,7 @@ class  predefined_bucket(Construct):
         self.bucket_arn=my_bucket.bucket_arn
 
     def get_arn(self):
-        return bucket_arn
+        return self.bucket_arn
 
     def add_to_resource_policy(self, PolicyStatment):
         my_bucket.add_to_resource_policy(PolicyStatment)
