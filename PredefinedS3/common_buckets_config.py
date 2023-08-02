@@ -43,6 +43,8 @@ class  predefined_bucket(Construct):
         if bucket_type == "log_bucket":
             my_bucket=self.log_bucket(bucket_name)
 
+        bucket_arn=my_bucket.bucket_arn
+
     def add_to_resource_policy(self, PolicyStatment):
         self.my_bucket.add_to_resource_policy(PolicyStatment)
         
