@@ -38,11 +38,11 @@ class  predefined_bucket(Construct):
         # call the right function based on the bucket type
         #using name withouth region/account_id as code downstream breaks if runtime variables are used. 
         if bucket_type == "data_bucket":
-            my_bucket=self.data_bucket(bucket_name)
+            self.my_bucket=self.data_bucket(bucket_name)
         if bucket_type == "s3_access_log_bucket":
-            my_bucket=self.s3_access_log_bucket(bucket_name)
+            self.my_bucket=self.s3_access_log_bucket(bucket_name)
         if bucket_type == "log_bucket":
-            my_bucket=self.log_bucket(bucket_name)
+            self.my_bucket=self.log_bucket(bucket_name)
 
         self.bucket_arn=my_bucket.bucket_arn
 
