@@ -44,7 +44,7 @@ class  predefined_bucket(Construct):
         if bucket_type == "log_bucket":
             my_bucket=self.log_bucket(bucket_name)
 
-        bucket_arn=my_bucket.bucket_arn
+        self.bucket_arn=my_bucket.bucket_arn
 
     def get_arn(self):
         return self.bucket_arn
