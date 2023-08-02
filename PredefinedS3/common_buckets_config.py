@@ -55,7 +55,7 @@ class  predefined_bucket(Construct):
         return self.bucket_arn
 
     def add_to_resource_policy(self, PolicyStatment):
-        my_bucket.add_to_resource_policy(PolicyStatment)
+        self.my_bucket.add_to_resource_policy(PolicyStatment)
         
                 
     def data_bucket( self,  bucket_name):
