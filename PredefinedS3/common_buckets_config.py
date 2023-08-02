@@ -40,12 +40,14 @@ class  predefined_bucket(Construct):
     
            
         if bucket_type == "s3_access_log_bucket":
-            self.my_bucket=self.s3_access_log_bucket(bucket_name)
+            my_bucket=self.s3_access_log_bucket(bucket_name)
         elif bucket_type == "log_bucket":
-            self.my_bucket=self.log_bucket(bucket_name)
+            my_bucket=self.log_bucket(bucket_name)
         else :
-             self.my_bucket=self.data_bucket(bucket_name)
-                     
+             my_bucket=self.data_bucket(bucket_name)
+
+
+        self.my_bucket=my_bucket
 
         self.bucket_arn=my_bucket.bucket_arn
 
