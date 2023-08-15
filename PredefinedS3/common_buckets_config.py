@@ -58,7 +58,8 @@ class  predefined_bucket(Construct):
         self.my_bucket.add_to_resource_policy(PolicyStatment)
 
     def get_url_for_object(self):
-        return self.my_bucket.s3_url_for_object
+        return self.my_bucket.s3_url_for_object()
+        
         
                 
     def data_bucket( self,  bucket_name):
