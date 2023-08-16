@@ -109,11 +109,11 @@ class  predefined_bucket(Construct):
             tag_filters=None,
         )
         
-        #tag the bucket for backup
-        aws_cdk.Tags.of(self).add('Backup', 'Default')
-        #LZA backup policy - compliant
-        aws_cdk.Tags.of(self).add('BackupPlan', 'Daily')
-        
+        # #tag the bucket for backup
+        # aws_cdk.Tags.of(self).add('Backup', 'Default')
+        # #LZA backup policy - compliant
+        # aws_cdk.Tags.of(self).add('BackupPlan', 'Daily')
+        aws_cdk.Tags.of(self).add('BackupPlan', 'Default')
         return my_bucket
 
     def s3_access_log_bucket( self,  bucket_name):
