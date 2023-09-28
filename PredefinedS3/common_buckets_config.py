@@ -118,7 +118,7 @@ class  predefined_bucket(Construct):
 
     def s3_access_log_bucket( self,  bucket_name):
         # Create a bucket with a name
-        bucket_unique_name = bucket_name + "-" + Aws.REGION + "-" + Aws.ACCOUNT_ID 
+        bucket_unique_name = bucket_name + "-"  + Aws.ACCOUNT_ID + "-" + Aws.REGION  
         print(f'bucket={bucket_unique_name}')
         transition = s3.Transition(
             storage_class=s3.StorageClass.GLACIER,
@@ -145,7 +145,7 @@ class  predefined_bucket(Construct):
         return my_bucket
     def log_bucket( self,  bucket_name):
         # Create a bucket with a name
-        bucket_unique_name = bucket_name + "-" + Aws.REGION + "-" + Aws.ACCOUNT_ID 
+        bucket_unique_name = bucket_name  + "-" + Aws.ACCOUNT_ID + "-" + Aws.REGION 
         print(f'bucket={bucket_unique_name}')
         transition = s3.Transition(
             storage_class=s3.StorageClass.GLACIER,
