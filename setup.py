@@ -4,5 +4,5 @@ setup(
     name="PredefinedS3",
     description="Commonly used S3 bucket configurations",
     packages=['PredefinedS3'],
-    version="0.0.1"
+    version="1.0.0"
 )
