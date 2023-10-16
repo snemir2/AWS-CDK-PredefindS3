@@ -60,7 +60,7 @@ class  predefined_bucket(Construct):
     def get_url_for_object(self):
         return self.my_bucket.s3_url_for_object()
 
-    dev get_bucket(self):
+    def get_bucket(self):
         return self.my_bucket
         
         
