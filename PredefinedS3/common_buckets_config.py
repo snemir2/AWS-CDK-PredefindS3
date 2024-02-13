@@ -80,7 +80,7 @@ class  predefined_bucket(Construct):
         
         my_bucket=s3.Bucket( self, bucket_name,
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-            encryption=s3.BucketEncryption.S3_MANAGED,
+            encryption=s3.BucketEncryption.DSSE_MANAGED,
             enforce_ssl=True,
             bucket_key_enabled=True,
             versioned=True,
@@ -130,7 +130,7 @@ class  predefined_bucket(Construct):
             )
         my_bucket=s3.Bucket( self, "LogBucket" + bucket_name,
         block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-        encryption=s3.BucketEncryption.S3_MANAGED,
+        encryption=s3.BucketEncryption.DSSE_MANAGED,
         bucket_key_enabled=True,
         access_control=s3.BucketAccessControl.LOG_DELIVERY_WRITE,
         enforce_ssl=True,
@@ -159,7 +159,7 @@ class  predefined_bucket(Construct):
         
         my_bucket=s3.Bucket( self, "LogBucket" + bucket_name,
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-            encryption=s3.BucketEncryption.S3_MANAGED,
+            encryption=s3.BucketEncryption.DSSE_MANAGED,
             bucket_key_enabled=True,
             enforce_ssl=True,
             versioned=False,
