@@ -94,7 +94,7 @@ class  predefined_bucket(Construct):
         #with hope of better updatability in the future, splitting off lifecycle rules
         noncurrent_version_transition = s3.NoncurrentVersionTransition(
             storage_class=s3.StorageClass.GLACIER,
-            transition_after=aws_cdk.Duration.days(30),
+            transition_after=aws_cdk.Duration.days(365),
             )
         inelegent_tiering_transition=s3.Transition(
                     storage_class=s3.StorageClass.INTELLIGENT_TIERING,
@@ -126,7 +126,7 @@ class  predefined_bucket(Construct):
         print(f'bucket={bucket_unique_name}')
         transition = s3.Transition(
             storage_class=s3.StorageClass.GLACIER,
-            transition_after=aws_cdk.Duration.days(30),
+            transition_after=aws_cdk.Duration.days(365),
             )
         my_bucket=s3.Bucket( self, "LogBucket" + bucket_name,
         block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
@@ -154,7 +154,7 @@ class  predefined_bucket(Construct):
         print(f'bucket={bucket_unique_name}')
         transition = s3.Transition(
             storage_class=s3.StorageClass.GLACIER,
-            transition_after=aws_cdk.Duration.days(30),
+            transition_after=aws_cdk.Duration.days(365),
             )
         
         my_bucket=s3.Bucket( self, "LogBucket" + bucket_name,
